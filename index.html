@@ -531,21 +531,22 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>mod_cluster Documentation</h1>
 <div class="details">
-<span id="revdate">2023-10-30</span>
+<span id="revdate">2023-11-09</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">mod_cluster</div>
 <ul class="sectlevel1">
 <li><a href="#overview">1. Overview</a>
 <ul class="sectlevel2">
-<li><a href="#platforms">1.1. Platforms</a></li>
-<li><a href="#advantages">1.2. Advantages</a></li>
-<li><a href="#requirements">1.3. Requirements</a></li>
-<li><a href="#limitations">1.4. Limitations</a></li>
-<li><a href="#downloads">1.5. Downloads</a></li>
-<li><a href="#configuration">1.6. Configuration</a></li>
-<li><a href="#migration">1.7. Migration from mod_jk or mod_proxy</a></li>
-<li><a href="#ssl-support">1.8. SSL support</a></li>
+<li><a href="#support-matrix">1.1. Support Matrix</a></li>
+<li><a href="#platforms">1.2. Platforms</a></li>
+<li><a href="#advantages">1.3. Advantages</a></li>
+<li><a href="#requirements">1.4. Requirements</a></li>
+<li><a href="#limitations">1.5. Limitations</a></li>
+<li><a href="#downloads">1.6. Downloads</a></li>
+<li><a href="#configuration">1.7. Configuration</a></li>
+<li><a href="#migration">1.8. Migration from mod_jk or mod_proxy</a></li>
+<li><a href="#ssl-support">1.9. SSL support</a></li>
 </ul>
 </li>
 <li><a href="#quick-start-guide">2. Quick Start Guide</a>
@@ -680,7 +681,71 @@ the former name mod_cluster is currently used for container implementation.
 </table>
 </div>
 <div class="sect2">
-<h3 id="platforms"><a class="link" href="#platforms">1.1. Platforms</a></h3>
+<h3 id="support-matrix"><a class="link" href="#support-matrix">1.1. Support Matrix</a></h3>
+<div class="sect3">
+<h4 id="container-integration-modules"><a class="link" href="#container-integration-modules">1.1.1. Container Integration Modules</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Release</th>
+<th class="tableblock halign-left valign-top">Tomcat versions</th>
+<th class="tableblock halign-left valign-top">Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>7</code> (EOL), <code>8</code> (EOL), <code>8.5</code>, <code>9</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modcluster/mod_cluster/tree/1.4.x">SCM Branch</a> <a href="https://docs.modcluster.io/apidocs/1.4/">Javadoc</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>8.5</code>, <code>9.0</code>, <code>10.1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modcluster/mod_cluster/tree/main">SCM Branch</a> <a href="https://docs.modcluster.io/apidocs/2.0/">Javadoc</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="apache-http-modules"><a class="link" href="#apache-http-modules">1.1.2. Apache HTTP modules</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Release</th>
+<th class="tableblock halign-left valign-top">httpd versions</th>
+<th class="tableblock halign-left valign-top">Links</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1.3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.49 and newer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modcluster/mod_cluster/tree/1.3.x">SCM Branch</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.0</code> (in development)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.4.53 and newer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/modcluster/mod_proxy_cluster/tree/main">SCM Branch</a> <a href="https://docs.modcluster.io/apidocs/mpc-2.0/">Doxygen</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Complete documentation for legacy versions is archived at <a href="https://docs.modcluster.io/legacy/" class="bare">https://docs.modcluster.io/legacy/</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="platforms"><a class="link" href="#platforms">1.2. Platforms</a></h3>
 <div class="paragraph">
 <p>The binary packages of the modules needed to use with Apache httpd server are present in most distributions.</p>
 </div>
@@ -690,7 +755,7 @@ the building instructions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="advantages"><a class="link" href="#advantages">1.2. Advantages</a></h3>
+<h3 id="advantages"><a class="link" href="#advantages">1.3. Advantages</a></h3>
 <div class="paragraph">
 <p>mod_proxy_cluster boasts the following advantages over other httpd-based load balancers:</p>
 </div>
@@ -748,19 +813,22 @@ The original concepts are described in a <a href="http://www.jboss.org/community
 </div>
 </div>
 <div class="sect2">
-<h3 id="requirements"><a class="link" href="#requirements">1.3. Requirements</a></h3>
+<h3 id="requirements"><a class="link" href="#requirements">1.4. Requirements</a></h3>
 <div class="sect3">
-<h4 id="balancer-side"><a class="link" href="#balancer-side">1.3.1. Balancer side</a></h4>
+<h4 id="balancer-side"><a class="link" href="#balancer-side">1.4.1. Balancer side</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Apache HTTP Server 2.4.53 and newer</p>
+<p>Apache HTTP Server 2.4.53 and newer for mod_proxy_cluster 2.x</p>
+</li>
+<li>
+<p>Apache HTTP Server 2.4.49 and newer for mod_proxy_cluster/mod_cluster 1.3.x</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="worker-side"><a class="link" href="#worker-side">1.3.2. Worker side</a></h4>
+<h4 id="worker-side"><a class="link" href="#worker-side">1.4.2. Worker side</a></h4>
 <div class="paragraph">
 <p>The mod_cluster container integration module (implemented in Java) is provided for all the following containers:</p>
 </div>
@@ -780,7 +848,7 @@ The original concepts are described in a <a href="http://www.jboss.org/community
 </div>
 </div>
 <div class="sect2">
-<h3 id="limitations"><a class="link" href="#limitations">1.4. Limitations</a></h3>
+<h3 id="limitations"><a class="link" href="#limitations">1.5. Limitations</a></h3>
 <div class="paragraph">
 <p>mod_proxy_cluster uses shared memory to keep the nodes description, the shared memory is created at the start of httpd and
 the structure of each item is fixed. The following cannot be changed by configuration directives.</p>
@@ -824,7 +892,7 @@ the structure of each item is fixed. The following cannot be changed by configur
 </div>
 </div>
 <div class="sect2">
-<h3 id="downloads"><a class="link" href="#downloads">1.5. Downloads</a></h3>
+<h3 id="downloads"><a class="link" href="#downloads">1.6. Downloads</a></h3>
 <div class="paragraph">
 <p>Download the latest <a href="https://modcluster.io/downloads/">mod_cluster release</a>.</p>
 </div>
@@ -849,7 +917,7 @@ and <a href="https://github.com/modcluster/mod_proxy_cluster">mod_proxy_cluster 
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">1.6. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">1.7. Configuration</a></h3>
 <div class="paragraph">
 <p>If you want to skip the details and just set up a minimal working
 installation of mod_cluster, see the <a href="#quick-start-guide">Quick Start Guide</a>.</p>
@@ -866,7 +934,7 @@ installation of mod_cluster, see the <a href="#quick-start-guide">Quick Start Gu
 </div>
 </div>
 <div class="sect2">
-<h3 id="migration"><a class="link" href="#migration">1.7. Migration from mod_jk or mod_proxy</a></h3>
+<h3 id="migration"><a class="link" href="#migration">1.8. Migration from mod_jk or mod_proxy</a></h3>
 <div class="paragraph">
 <p>Migrating from mod_jk or mod_proxy is fairly straightforward. In general, much of the configuration previously
 found in <code>httpd.conf</code> is now defined in the application server worker nodes.</p>
@@ -883,7 +951,7 @@ found in <code>httpd.conf</code> is now defined in the application server worker
 </div>
 </div>
 <div class="sect2">
-<h3 id="ssl-support"><a class="link" href="#ssl-support">1.8. SSL support</a></h3>
+<h3 id="ssl-support"><a class="link" href="#ssl-support">1.9. SSL support</a></h3>
 <div class="paragraph">
 <p>Both the request connections between httpd and the application server nodes, and the feedback channel
 between the nodes and httpd can be secured. The former is achieved via the mod_proxy_https module and a corresponding
@@ -1051,7 +1119,6 @@ Change to the bin directory of the subfolder <code>Apache24</code> where you unz
 <div class="content">
 <pre class="CodeRay highlight"><code>LoadModule proxy_module /opt/jboss/httpd/lib/httpd/modules/mod_proxy.so
 LoadModule proxy_ajp_module /opt/jboss/httpd/lib/httpd/modules/mod_proxy_ajp.so
-LoadModule cluster_slotmem_module /opt/jboss/httpd/lib/httpd/modules/mod_cluster_slotmem.so
 LoadModule manager_module /opt/jboss/httpd/lib/httpd/modules/mod_manager.so
 LoadModule proxy_cluster_module /opt/jboss/httpd/lib/httpd/modules/mod_proxy_cluster.so
 LoadModule advertise_module /opt/jboss/httpd/lib/httpd/modules/mod_advertise.so
@@ -3432,7 +3499,7 @@ was recalculated. The node with the lowest <code>status</code> is selected. Node
 </div>
 </div>
 <div class="sect3">
-<h4 id="waitforremove"><a class="link" href="#waitforremove">4.4.4. WaitForRemove</a></h4>
+<h4 id="waitbeforeremove"><a class="link" href="#waitbeforeremove">4.4.4. WaitBeforeRemove</a></h4>
 <div class="paragraph">
 <p>Time in seconds before a removed node is forgotten by httpd.</p>
 </div>
@@ -3459,7 +3526,7 @@ reverse-proxy in the path. This could be used allow httpd to serve static inform
 <h4 id="enableoptions"><a class="link" href="#enableoptions">4.4.6. EnableOptions</a></h4>
 <div class="paragraph">
 <p>Use <code>OPTIONS</code> method to periodically check the active connection. Fulfils the same role as the <code>CPING/CPONG</code> used by AJP
-but for HTTP/HTTPS connections. The endpoint needs to implement at least HTTP/1.1.</p>
+but for HTTP/HTTPS connections. The endpoint needs to implement HTTP/1.0.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3484,14 +3551,59 @@ to any request coming through the proxy.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="wsupgradeheader"><a class="link" href="#wsupgradeheader">4.4.8. WSUpgradeHeader</a></h4>
+<h4 id="enablewstunnel"><a class="link" href="#enablewstunnel">4.4.8. EnableWsTunnel</a></h4>
 <div class="paragraph">
-<p>Use <code>WSUpgradeHeader value</code> to define the value of the upgrade header mod_proxy_wstunnel is accepting. See
-mod_proxy_wstunnel and mod_proxy docs for more information.</p>
+<p>Use ws or wss instead of http or https when creating nodes (allows WebSocket proxying).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="responsefieldsize"><a class="link" href="#responsefieldsize">4.4.9. ResponseFieldSize</a></h4>
+<h4 id="wsupgradeheader"><a class="link" href="#wsupgradeheader">4.4.9. WSUpgradeHeader</a></h4>
+<div class="paragraph">
+<p>Use <code>WSUpgradeHeader value</code> to define the value of the upgrade header that is accepted (corresponds to
+ProxyPass upgrade=value). Accepted values are following:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">2.0 (in development)</th>
+<th class="tableblock halign-left valign-top">1.3</th>
+<th class="tableblock halign-left valign-top">mod_proxy_wstunnel (used in the past)</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">protocol name to check before using the WS tunnel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read the header value from request</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NONE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bypass the header check</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>See mod_proxy_http docs for more information.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="responsefieldsize"><a class="link" href="#responsefieldsize">4.4.10. ResponseFieldSize</a></h4>
 <div class="paragraph">
 <p>Size in bytes of the HTTP/1.1 buffers of the workers, that limits the header size a webapp
 can use (Note: In Tomcat there is  maxHttpHeaderSize that also limits it in the Connector).</p>
@@ -3501,7 +3613,7 @@ can use (Note: In Tomcat there is  maxHttpHeaderSize that also limits it in the 
 </div>
 </div>
 <div class="sect3">
-<h4 id="cachesharefor"><a class="link" href="#cachesharefor">4.4.10. CacheShareFor</a></h4>
+<h4 id="cachesharefor"><a class="link" href="#cachesharefor">4.4.11. CacheShareFor</a></h4>
 <div class="paragraph">
 <p>Time to cache the shared memory information in seconds.</p>
 </div>
@@ -3510,12 +3622,21 @@ can use (Note: In Tomcat there is  maxHttpHeaderSize that also limits it in the 
 </div>
 </div>
 <div class="sect3">
-<h4 id="modproxyclusterthreadcount"><a class="link" href="#modproxyclusterthreadcount">4.4.11. ModProxyClusterThreadCount</a></h4>
+<h4 id="modproxyclusterthreadcount"><a class="link" href="#modproxyclusterthreadcount">4.4.12. ModProxyClusterThreadCount</a></h4>
 <div class="paragraph">
 <p>Number of threads that should be created for watchdog logic. Must be positive. (Since 2.0)</p>
 </div>
 <div class="paragraph">
 <p><strong>Default:</strong> 16</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deterministicfailover"><a class="link" href="#deterministicfailover">4.4.13. DeterministicFailover</a></h4>
+<div class="paragraph">
+<p>Controls whether a node upon failover is chosen deterministically.</p>
+</div>
+<div class="paragraph">
+<p><strong>Default:</strong> Off</p>
 </div>
 </div>
 </div>
@@ -3675,16 +3796,7 @@ sessions.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code># httpd 2.2.x or older
-&lt;Location /mod_cluster-manager&gt;
-   SetHandler mod_cluster-manager
-   Order deny,allow
-   Deny from all
-   Allow from 127.0.0.1
-&lt;/Location&gt;
-
-# httpd 2.4.x or later
-&lt;Location /mod_cluster-manager&gt;
+<pre class="CodeRay highlight"><code>&lt;Location /mod_cluster-manager&gt;
    SetHandler mod_cluster-manager
    Require ip 127.0.0
 &lt;/Location&gt;</code></pre>
@@ -3737,7 +3849,7 @@ AS/JBossWeb/Tomcat to whom it should send the cluster information.</p>
 <div class="paragraph">
 <p>ServerAdvertise On <a href="http://hostname:port" class="bare">http://hostname:port</a>: Tell the hostname and port to use.
 Only needed if the VirtualHost is not defined correctly, if the VirtualHost is
-a <a href="http://httpd.apache.org/docs/2.2/vhosts/name-based.html">Name-based Virtual Host</a>
+a <a href="http://httpd.apache.org/docs/2.4/vhosts/name-based.html">Name-based Virtual Host</a>
 or when VirtualHost is not used.</p>
 </div>
 <div class="paragraph">
@@ -3805,7 +3917,7 @@ This allow to specify an address on multi IP address boxes.</p>
 <h3 id="minimal-example"><a class="link" href="#minimal-example">4.6. Minimal Example</a></h3>
 <div class="paragraph">
 <p>Beware of the different names of <code>mod_cluster_slotmem.so</code> and <code>mod_slotmem.so</code> between mod_cluster 1.3.x and older versions.
-Last but not least, pay attention to httpd 2.2.x and httpd 2.4.x authentication configuration changes.</p>
+The 2.x version uses Apache HTTP Server&#8217;s <code>mod_slotmem_shm.so</code>.</p>
 </div>
 <div class="sect3">
 <h4 id="mod_cluster-1-3-x-and-newer-apache-http-server-2-4-x"><a class="link" href="#mod_cluster-1-3-x-and-newer-apache-http-server-2-4-x">4.6.1. mod_cluster 1.3.x and newer, Apache HTTP Server 2.4.x</a></h4>
@@ -3836,46 +3948,6 @@ LoadModule advertise_module modules/mod_advertise.so
   &lt;Location /mod_cluster-manager&gt;
      SetHandler mod_cluster-manager
      Require ip 127.0.0
-  &lt;/Location&gt;
-
-  &lt;/VirtualHost&gt;
-&lt;/IfModule&gt;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="mod_cluster-1-2-x-apache-http-server-2-2-x"><a class="link" href="#mod_cluster-1-2-x-apache-http-server-2-2-x">4.6.2. mod_cluster 1.2.x, Apache HTTP Server 2.2.x</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>LoadModule proxy_module modules/mod_proxy.so
-LoadModule proxy_ajp_module modules/mod_proxy_ajp.so
-
-LoadModule slotmem_module modules/mod_slotmem.so
-
-LoadModule manager_module modules/mod_manager.so
-LoadModule proxy_cluster_module modules/mod_proxy_cluster.so
-LoadModule advertise_module modules/mod_advertise.so
-
-&lt;IfModule manager_module&gt;
-  Listen 10.33.144.3:6666
-  &lt;VirtualHost 10.33.144.3:6666&gt;
-
-  # Where your worker nodes connect from
-  &lt;Location /&gt;
-     Order deny,allow
-     Deny from all
-     Allow from 127.0.0.
-  &lt;/Location&gt;
-
-  ServerAdvertise On
-  EnableMCPMReceive
-
-  # Where administrator reads the console from
-  &lt;Location /mod_cluster-manager&gt;
-     SetHandler mod_cluster-manager
-     Order deny,allow
-     Deny from all
-     Allow from 127.0.0.
   &lt;/Location&gt;
 
   &lt;/VirtualHost&gt;
@@ -4015,21 +4087,7 @@ cp modules/*.so C:\Users\karm\Apache24\modules\ -v
 <div class="sect3">
 <h4 id="build-httpd-from-its-sources"><a class="link" href="#build-httpd-from-its-sources">4.7.2. Build httpd from its sources</a></h4>
 <div class="paragraph">
-<p>To build httpd-2.2.x from its sources see <a href="http://httpd.apache.org/docs/2.2/install.html">ASF httpd 2.2 doc</a>,
-see <a href="http://httpd.apache.org/docs/2.4/install.html">ASF httpd 2.4 doc</a> for httpd-2.4.x.</p>
-</div>
-<div class="paragraph">
-<p>If needed, patch the httpd-2.2.x sources with (The patch prevents long
-waiting time when the node IP can&#8217;t be resolved that should not happen
-so you can skip the patch part if you don&#8217;t want to rebuild httpd).
-<a href="https://github.com/modcluster/mod_cluster/blob/main/native/mod_proxy_cluster/mod_proxy_ajp.patch">mod_proxy_ajp.patch</a></p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>(cd modules/proxy
-  patch -p0 &lt; $location/mod_proxy_ajp.patch
-)</pre>
-</div>
+<p>To build httpd-2.4.x from its sources see <a href="http://httpd.apache.org/docs/2.4/install.html">ASF httpd 2.4 doc</a>.</p>
 </div>
 <div class="paragraph">
 <p>Configure httpd with something like:</p>
@@ -4068,8 +4126,7 @@ protocol (<code>--enable-proxy-ajp</code>) enabled and with dso enabled (<code>-
 </div>
 <div class="paragraph">
 <p>Build the mod_proxy_cluster&#8217;s modules components, for each subdirectory
-advertise, mod_manager, mod_proxy_cluster and mod_cluster_slotmem (mod_slotmem
-for version 1.2 or older) do
+advertise, mod_manager, mod_proxy_cluster and mod_cluster_slotmem do
 something like:</p>
 </div>
 <div class="listingblock">
@@ -4082,7 +4139,7 @@ something like:</p>
 </div>
 <div class="paragraph">
 <p>Where apache_installation_directory is the location of an installed
-version of httpd-2-2.x or newer.
+version of httpd-2.4.x or newer.
 The <a href="https://httpd.apache.org/docs/trunk/programs/apxs.html">apxs</a> file can be
 found in your apache_installation_directory/bin directory.</p>
 </div>
@@ -4107,12 +4164,6 @@ You can ignore the libtool message on most platform:
 <p>Once that is done use Apache httpd configuration to configure mod_proxy_cluster.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="build-the-mod_proxy-module"><a class="link" href="#build-the-mod_proxy-module">4.7.4. Build the mod_proxy module</a></h4>
-<div class="paragraph">
-<p>It is only needed for httpd-2.2.x where x ≤ 11. Process like the other mod_proxy_cluster modules.</p>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="installing-httpd-modules"><a class="link" href="#installing-httpd-modules">4.8. Installing httpd modules</a></h3>
@@ -4120,8 +4171,9 @@ You can ignore the libtool message on most platform:
 <p>Several bundles are available at <a href="http://www.jboss.org/mod_cluster/downloads.html">http://www.jboss.org/mod_cluster/downloads.html</a>.</p>
 </div>
 <div class="paragraph">
-<p>In case you can&#8217;t find a prepared package of mod_cluster in the download area, it is possible to build mod_cluster for the sources.
-You need a distribution of httpd (at least 2.2.8) or (better) a source tarball of httpd and the sources of mod_cluster.</p>
+<p>In case you can&#8217;t find a prepared package of mod_cluster in the download area, it is possible to build mod_cluster/mod_proxy_cluster
+from the sources. You need a distribution of httpd (at least 2.4.49 for 1.3.x, 2.4.53 for 2.x respectively)) or (better) a source
+tarball of httpd and the sources of mod_cluster. You can find those at <a href="https://dlcdn.apache.org/httpd/">https://dlcdn.apache.org/httpd/</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="configuration-2"><a class="link" href="#configuration-2">4.8.1. Configuration</a></h4>
@@ -4205,7 +4257,7 @@ configuration.</p>
 <div class="sect4">
 <h5 id="apache-httpd-configuration-part"><a class="link" href="#apache-httpd-configuration-part">Apache httpd configuration part</a></h5>
 <div class="paragraph">
-<p><a href="http://httpd.apache.org/docs/2.2/mod/mod_ssl.html">mod_ssl</a> of httpd is using to do that.
+<p><a href="http://httpd.apache.org/docs/2.4/mod/mod_ssl.html">mod_ssl</a> of httpd is using to do that.
 See in one example how easy the configuration is:</p>
 </div>
 <div class="listingblock">
@@ -5077,7 +5129,7 @@ X-Manager-Host: 10.33.144.3</code></pre>
 It is the IP and port of the VirtualHost where mod_advertise is configured or URL parameter of the ServerAdvertise directive.</p>
 </div>
 <div class="paragraph">
-<p>See [mod_advertise configuration]({{ site.url }}/documentation#modadvertise).</p>
+<p>See <a href="#mod_advertise">mod_advertise</a> configuration.</p>
 </div>
 </div>
 <div class="sect2">
@@ -5269,18 +5321,8 @@ ServerAdvertise directive in you mod_cluster httpd configuration:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code># httpd 2.4.x
-
-&lt;Location /&gt;
+<pre class="CodeRay highlight"><code>&lt;Location /&gt;
     Require ip 10.33.144.3
-&lt;/Location&gt;
-
-# httpd 2.2.x
-
-&lt;Location /&gt;
-    Order deny,allow
-    Deny from all
-    Allow from 10.33.144.3
 &lt;/Location&gt;</code></pre>
 </div>
 </div>
@@ -5752,7 +5794,7 @@ only the balancers and the workers definitions are slightly different.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">timeout</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nodeTimeout</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default wait forever (<a href="http://httpd.apache.org/docs/2.2/mod/mod_proxy.html">http://httpd.apache.org/docs/2.2/mod/mod_proxy.html</a> is wrong there)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default wait forever (<a href="http://httpd.apache.org/docs/2.4/mod/mod_proxy.html">http://httpd.apache.org/docs/2.4/mod/mod_proxy.html</a> is wrong there)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ttl</p></td>
